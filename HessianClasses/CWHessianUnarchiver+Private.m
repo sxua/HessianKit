@@ -206,7 +206,7 @@
   NSXMLDocument* xmlDocument = [[NSXMLDocument alloc] initWithXMLString:xmlString options:NSXMLNodeOptionsNone error:&error]; 
   if (!xmlDocument) {
     if (error) {
-      [NSException raise:NSInvalidArchiveOperationException format:@"XML parse error domain:%@ code:%ld", [error domain], [error code]];
+      [NSException raise:NSInvalidArchiveOperationException format:@"XML parse error domain:%@ code:%ld", [error domain], (long)[error code]];
     } else {
       [NSException raise:NSInvalidUnarchiveOperationException format:@"Unknown error in XML stream"];
     }
