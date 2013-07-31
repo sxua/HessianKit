@@ -72,12 +72,12 @@
   if (requestError) {
     responseData = nil;
     [NSException raise:NSInvalidArchiveOperationException 
-                format:@"Network error domain:%@ code:%d", [requestError domain], [requestError code]];
+                format:@"Network error domain:%@ code:%ld", [requestError domain], [requestError code]];
   } else if (returnResponse != nil) {
   	if ([returnResponse statusCode] == 200) {
       [responseData retain];
     } else {
-      [NSException raise:NSInvalidArchiveOperationException format:@"HTTP error %d", [returnResponse statusCode]];
+      [NSException raise:NSInvalidArchiveOperationException format:@"HTTP error %ld", [returnResponse statusCode]];
       return;
     }
   } else {
