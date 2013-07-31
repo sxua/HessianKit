@@ -88,7 +88,7 @@ static BOOL CWAddProtocolImplementationsToClass(Class aClass, Protocol* aProtoco
         setterSEL = @selector(priv_setObjectValue:);
       }
     } else {
-      NSLog(@"Unknown type %s for property %@ in protocol %@", type, propertyName, NSStringFromProtocol(aProtocol));
+      NSLog(@"Unknown type %s for property %@ in protocol %@", &type, propertyName, NSStringFromProtocol(aProtocol));
       success = NO;
     }
     if (success) {

@@ -77,7 +77,7 @@
   if ([stream isKindOfClass:[NSInputStream class]] && streamEvent == NSStreamEventHasBytesAvailable) {
     [self.delegate channel:self didReceiveDataInInputStream:(NSInputStream*)stream];
   }
-  [stream stream:stream handleEvent:streamEvent];
+  [stream performSelector:@selector(stream:handleEvent:) withObject:stream withObject:streamEvent];
 }
 
 @end

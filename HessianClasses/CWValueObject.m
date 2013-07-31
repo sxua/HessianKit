@@ -95,7 +95,7 @@
       [encoder encodeObject:value forKey:propertyName];
     } else {
       [NSException raise:NSInternalInconsistencyException 
-                  format:@"Unknown type %s for property %@ in protocol %@", type, propertyName, NSStringFromProtocol(self.protocol)];
+                  format:@"Unknown type %s for property %@ in protocol %@", &type, propertyName, NSStringFromProtocol(self.protocol)];
     }
   }
 }

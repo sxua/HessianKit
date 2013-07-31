@@ -125,7 +125,7 @@ static NSMethodSignature* getMethodSignatureRecursively(Protocol *p, SEL aSel)
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector;
 {
   if (aSelector != _cmd && ![NSStringFromSelector(aSelector) hasPrefix:@"_cf"]) {
-    NSNumber* selectorKey = [NSNumber numberWithInteger:(NSInteger)aSelector];
+    NSNumber* selectorKey = [NSNumber numberWithInteger:sel_getName(aSelector)];
     NSMethodSignature* signature = [self.methodSignatures objectForKey:selectorKey];
     if (!signature) {
       signature = getMethodSignatureRecursively(self.protocol, aSelector);

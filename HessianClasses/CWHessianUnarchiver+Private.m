@@ -291,7 +291,7 @@
     if (!object) {
       object = [NSNull null];
     }
-    [map setObject:object forKey:key];
+    [map setObject:object forKey:(id)key];
   }
   (void)[self readChar];
   if (typedObject) {

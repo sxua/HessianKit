@@ -21,7 +21,7 @@
 #import "CWHessianChannel.h"
 
 
-@interface CWHessianStreamChannel : CWHessianChannel {
+@interface CWHessianStreamChannel : CWHessianChannel <NSStreamDelegate> {
 @private
   NSInputStream* _receiveStream;
   NSOutputStream* _sendStream;
